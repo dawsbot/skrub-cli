@@ -1,3 +1,4 @@
+/* eslint xo/no-process-exit: 0 */
 const path = require('path');
 const fs = require('fs-extra');
 const pathExists = require('path-exists');
@@ -27,6 +28,14 @@ test.beforeEach(t => {
   t.context.tmp = tempfile();
   fixtures.forEach(fixture => fs.ensureFileSync(path.join(t.context.tmp, fixture)));
 });
+
+if (process.plaform === 'win32') {
+  test('windows - skrub - invalid args', t => {
+    t.true(shelljs.exec(cliLocation, {silent: true}).code === 1);
+
+    process.exit(0);
+  });
+}
 
 test('skrub - invalid args', t => {
   t.true(shelljs.exec(cliLocation, {silent: true}).code === 1);
