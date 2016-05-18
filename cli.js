@@ -26,6 +26,7 @@ const cli = meow([
 
 updateNotifier({pkg: cli.pkg, updateCheckInterval: 3600000}).notify();
 
+console.log(`\n\nPLATFORM: ${process.platform}`);
 if (process.platform === 'win32') {
   console.error(`Windows is not yet supported.
     Flags are not parsed the same way from the command line in Windows.
