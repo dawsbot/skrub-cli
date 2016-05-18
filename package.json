@@ -1,7 +1,7 @@
 {
   "name": "skrub-cli",
   "version": "0.0.0",
-  "description": "descrr",
+  "description": "Cli for irreversible file deletion from any operating system",
   "license": "MIT",
   "homepage": "https://github.com/dawsonbotsford/skrub-cli#readme",
   "repository": {
@@ -27,10 +27,14 @@
     "test": "xo && ava"
   },
   "files": [
-    "index.js",
     "cli.js"
   ],
   "keywords": [
+    "rm",
+    "secure",
+    "security",
+    "scrub",
+    "skrub",
     "cli-app",
     "cli",
     "windows",
@@ -50,6 +54,7 @@
   "devDependencies": {
     "ava": "^0.14.0",
     "fs-extra": "^0.30.0",
+    "path-exists": "^3.0.0",
     "tempfile": "^1.1.1",
     "xo": "^0.15.1"
   },
