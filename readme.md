@@ -7,7 +7,6 @@
 
   <br>
   <br><br><a href="https://travis-ci.org/dawsonbotsford/skrub-cli"><img src="https://api.travis-ci.org/dawsonbotsford/skrub-cli.svg?branch=master"></a>
-  <a href="https://ci.appveyor.com/project/dawsonbotsford/skrub-cli"><img src="https://ci.appveyor.com/api/projects/status/rwei3awrxqsjxd45?svg=true"></a>
 
   <br>
 
