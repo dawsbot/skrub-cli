@@ -72,8 +72,6 @@ If you want to replace `rm` with `skrub`, place this in your `~/.bashrc`, `~/.zs
 alias rm=skrub
 ```
 
-Now you can avoid those pesky `-rf` flags. (recursive and forceful 
-
 <br>
 
 ## [FAQ](https://github.com/dawsonbotsford/skrub#faq)
