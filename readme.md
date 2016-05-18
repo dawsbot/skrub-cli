@@ -3,10 +3,11 @@
 
   <br>
 
-  <b>Cli for irreversible file deletion</b>
+  <b>Irreversible file deletion on every operating system</b>
 
   <br>
   <br><br><a href="https://travis-ci.org/dawsonbotsford/skrub-cli"><img src="https://api.travis-ci.org/dawsonbotsford/skrub-cli.svg?branch=master"></a>
+  <a href="https://ci.appveyor.com/project/dawsonbotsford/skrub-cli"><img src="https://ci.appveyor.com/api/projects/status/two1klt2y7va7qab?svg=true"></a>
 
   <br>
 
@@ -18,7 +19,7 @@
 
 <br>
 
-Works on OS X, Linux
+Works on OS X, Linux, and Windows
 
 In contrast to `rm`, which [leaves file contents unallocated in memory](http://unix.stackexchange.com/questions/10883/where-do-files-go-when-the-rm-command-is-issued), `skrub` first floods the file with garbage data and then **removes it forever**.
 
@@ -56,12 +57,6 @@ skrub --help
 <br>
 
 ## [FAQ](https://github.com/dawsonbotsford/skrub#faq)
-
-<br>
-
-## Why no Windows support?
-
-Due to the way flags and multiple args are parsed in Windows, supporting this **safely** is a risk. Help wanted from anyone on a Windows machine.
 
 <br>
 
