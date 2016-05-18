@@ -66,7 +66,7 @@ $ skrub --help
 
 ## Related
 
-* [skrub-cli](https://github.com/dawsonbotsford/skrub-cli)
+* [skrub](https://github.com/dawsonbotsford/skrub)
 * [kiwf](https://github.com/BrianNewsom/kiwf)
 * [del](https://github.com/sindresorhus/del)
 * [trash](https://github.com/sindresorhus/trash)
