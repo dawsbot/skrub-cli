@@ -1,0 +1,60 @@
+{
+  "name": "skrub-cli",
+  "version": "0.0.0",
+  "description": "descrr",
+  "license": "MIT",
+  "homepage": "https://github.com/dawsonbotsford/skrub-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawsonbotsford/skrub-cli.git"
+  },
+  "author": {
+    "name": "Dawson Botsford",
+    "email": "DawsonBotsford@gmail.com",
+    "url": "dawsonbotsford.com"
+  },
+  "bugs": {
+    "url": "https://github.com/dawsonbotsford/skrub-cli/issues"
+  },
+  "bin": {
+    "skrub": "cli.js",
+    "skrub-cli": "cli.js"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "windows",
+    "lean",
+    "minimal",
+    "documented",
+    "tested",
+    "licensed",
+    "ava",
+    "dawson"
+  ],
+  "dependencies": {
+    "meow": "^3.7.0",
+    "skrub": "*",
+    "update-notifier": "^0.6.1"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "fs-extra": "^0.30.0",
+    "tempfile": "^1.1.1",
+    "xo": "^0.15.1"
+  },
+  "xo": {
+    "space": true,
+    "esnext": true
+  }
+}
