@@ -37,9 +37,13 @@ npm install --global skrub-cli
 
 ## Usage
 
-In it's basic form, `skrub` is be used just like `rm`.
+In it's basic form, `skrub` **replaces** `rm`. See how to alias over `rm` [here](#alias)
 
-Commands like `skrub *` will perform much like `rm *`, with the excption that the file data is securely removed from your system.
+The API is similar as well:
+
+* `skrub *` == `rm *`
+* `skrub *` == `rm -rf *`
+* `skrub index.js` == `rm index.js`
 
 ```
 $ skrub --help
@@ -56,7 +60,19 @@ $ skrub --help
       $ skrub ../beCarefulHere --dry-run
 ```
 
-*You can use [glob patterns](https://github.com/sindresorhus/globby#globbing-patterns).*
+*You can use [glob patterns](https://github.com/sindresorhus/globby#globbing-patterns) and multiple path arguments to compound and negate matches.*
+
+<br>
+
+## Alias
+
+If you want to replace `rm` with `skrub`, place this in your `~/.bashrc`, `~/.zshrc`, etc.
+
+```
+alias rm=skrub
+```
+
+Now you can avoid those pesky `-rf` flags. (recursive and forceful 
 
 <br>
 
