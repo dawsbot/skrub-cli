@@ -3,7 +3,7 @@
 
   <br>
 
-  <b>Cli for irreversible file deletion from any operating system</b>
+  <b>Cli for irreversible file deletion</b>
 
   <br>
   <br><br><a href="https://travis-ci.org/dawsonbotsford/skrub-cli"><img src="https://api.travis-ci.org/dawsonbotsford/skrub-cli.svg?branch=master"></a>
@@ -47,6 +47,7 @@ skrub --help
 
     Examples
       $ skrub unicorn.png rainbow.png
+      $ skrub ../* '!../thatSuperImportantThing.txt'
       $ skrub ../beCarefulHere --dry-run
 ```
 

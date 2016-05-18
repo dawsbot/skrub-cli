@@ -53,9 +53,9 @@
   },
   "devDependencies": {
     "ava": "^0.14.0",
+    "execa": "^0.4.0",
     "fs-extra": "^0.30.0",
     "path-exists": "^3.0.0",
-    "shelljs": "^0.7.0",
     "tempfile": "^1.1.1",
     "xo": "^0.15.1"
   },

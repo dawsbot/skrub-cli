@@ -13,7 +13,8 @@ const cli = meow([
 
   Examples
     $ skrub unicorn.png rainbow.png
-    $ skrub ../beCarefulHere --dry-run`
+    $ skrub ../* '!../thatSuperImportantThing.txt'
+    $ skrub /beCarefulHere --dry-run`
 ], {
   string: ['_'],
   boolean: [

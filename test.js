@@ -3,8 +3,8 @@ const path = require('path');
 const fs = require('fs-extra');
 const pathExists = require('path-exists');
 const tempfile = require('tempfile');
-const shelljs = require('shelljs');
 const cliLocation = './cli.js';
+const execa = require('execa');
 
 import test from 'ava';
 
@@ -30,16 +30,17 @@ test.beforeEach(t => {
 });
 
 test('skrub - invalid args', t => {
-  t.true(shelljs.exec(cliLocation, {silent: true}).code === 1);
+  t.throws(execa(cliLocation));
 });
 
 test('skrub - dry-run does not remove files', async t => {
-  t.true(shelljs.exec(`${cliLocation} '*.tmp' '!1*' --dry-run --cwd ${t.context.tmp}`, {silent: true}).code === 0);
+  // t.true(shelljs.exec(`${cliLocation} '*.tmp' '!1*' --dry-run --cwd ${t.context.tmp}`, {silent: true}).code === 0);
+  t.truthy(await execa(cliLocation, ['*.tpm', '!1*', '--dry-run']));
   exists(t, ['1.tmp', '2.tmp', '3.tmp', '3.tmp', '.dot.tmp']);
 });
 
 test('skrub - removes files', async t => {
-  t.true(shelljs.exec(`${cliLocation} '*.tmp' '!1*' --cwd ${t.context.tmp}`).code === 0);
+  t.truthy(await execa(cliLocation, ['*.tmp', '!1*', '--cwd', t.context.tmp]));
 
   exists(t, ['1.tmp', '.dot.tmp']);
   notExists(t, ['2.tmp', '3.tmp', '4.tmp']);
