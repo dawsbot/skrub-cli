@@ -29,6 +29,7 @@ test.beforeEach(t => {
   fixtures.forEach(fixture => fs.ensureFileSync(path.join(t.context.tmp, fixture)));
 });
 
+console.log(`\n\nPLATFORM: ${process.platform}`);
 if (process.plaform === 'win32') {
   test('windows - skrub - invalid args', t => {
     t.true(shelljs.exec(cliLocation, {silent: true}).code === 1);
