@@ -1,6 +1,6 @@
 {
   "name": "skrub-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Cli for irreversible file deletion from any operating system",
   "license": "MIT",
   "homepage": "https://github.com/dawsonbotsford/skrub-cli#readme",
