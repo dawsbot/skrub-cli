@@ -37,8 +37,12 @@ npm install --global skrub-cli
 
 ## Usage
 
+In it's basic form, `skrub` is be used just like `rm`.
+
+Commands like `skrub *` will perform much like `rm *`, with the excption that the file data is securely removed from your system.
+
 ```
-skrub --help
+$ skrub --help
 
   Usage
       $ skrub <path|glob> [...]
