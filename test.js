@@ -33,23 +33,22 @@ console.log(`\n\nPLATFORM: ${process.platform}`);
 if (process.plaform === 'win32') {
   test('windows - skrub - invalid args', t => {
     t.true(shelljs.exec(cliLocation, {silent: true}).code === 1);
+  });
+} else {
+  test('skrub - invalid args', t => {
+    t.true(shelljs.exec(cliLocation, {silent: true}).code === 1);
+  });
 
-    process.exit(0);
+  test('skrub - dry-run does not remove files', async t => {
+    t.true(shelljs.exec(`${cliLocation} *.tmp !1* --dry-run --cwd ${t.context.tmp}`, {silent: true}).code === 0);
+    exists(t, ['1.tmp', '2.tmp', '3.tmp', '3.tmp', '.dot.tmp']);
+  });
+
+  test('skrub - removes files', async t => {
+    t.true(shelljs.exec(`${cliLocation} *.tmp !1* --cwd ${t.context.tmp}`).code === 0);
+
+    exists(t, ['1.tmp', '.dot.tmp']);
+    notExists(t, ['2.tmp', '3.tmp', '4.tmp']);
   });
 }
 
-test('skrub - invalid args', t => {
-  t.true(shelljs.exec(cliLocation, {silent: true}).code === 1);
-});
-
-test('skrub - dry-run does not remove files', async t => {
-  t.true(shelljs.exec(`${cliLocation} *.tmp !1* --dry-run --cwd ${t.context.tmp}`, {silent: true}).code === 0);
-  exists(t, ['1.tmp', '2.tmp', '3.tmp', '3.tmp', '.dot.tmp']);
-});
-
-test('skrub - removes files', async t => {
-  t.true(shelljs.exec(`${cliLocation} *.tmp !1* --cwd ${t.context.tmp}`).code === 0);
-
-  exists(t, ['1.tmp', '.dot.tmp']);
-  notExists(t, ['2.tmp', '3.tmp', '4.tmp']);
-});
