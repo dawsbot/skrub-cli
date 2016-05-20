@@ -10,18 +10,21 @@ const cli = meow([
 
   Options
     -d, --dry-run  List what would be skrubbed instead of skrubbing
+    -i, --iterations  Write over the file multiple times (defaults to one)
 
   Examples
     $ skrub unicorn.png rainbow.png
-    $ skrub ../* '!../thatSuperImportantThing.txt'
-    $ skrub /beCarefulHere --dry-run`
+    $ skrub '../*' '!../thatSuperImportantThing.txt'
+    $ skrub /beCarefulHere --dry-run
+    $ skrub extraSkrubbed.txt --iterations 36`
 ], {
   string: ['_'],
   boolean: [
     'dry-run'
   ],
   alias: {
-    d: 'dry-run'
+    d: 'dry-run',
+    i: 'iterations'
   }
 });
 
@@ -36,5 +39,8 @@ skrub(cli.input, cli.flags)
   .then(files => {
     if (cli.flags.dryRun) {
       console.log(files.join('\n'));
+    }
+    if (cli.flags.iterations) {
+      console.log(`written over ${cli.flags.iterations} times`);
     }
   });

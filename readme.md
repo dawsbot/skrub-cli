@@ -53,11 +53,13 @@ $ skrub --help
 
     Options
       -d, --dry-run  List what would be skrubbed instead of skrubbing
+      -i, --iterations  Write over the file multiple times (defaults to one)
 
     Examples
       $ skrub unicorn.png rainbow.png
       $ skrub ../* '!../thatSuperImportantThing.txt'
       $ skrub ../beCarefulHere --dry-run
+      $ skrub extraSkrubbed.txt --iterations 36
 ```
 
 *You can use [glob patterns](https://github.com/sindresorhus/globby#globbing-patterns) and multiple path arguments to compound and negate matches.*

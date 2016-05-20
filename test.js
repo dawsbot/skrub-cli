@@ -39,8 +39,15 @@ test('skrub - dry-run does not remove files', async t => {
   exists(t, ['1.tmp', '2.tmp', '3.tmp', '3.tmp', '.dot.tmp']);
 });
 
-test('skrub - removes files', async t => {
+test('skrub - removes files 1 iteration', async t => {
   t.truthy(await execa(cliLocation, ['*.tmp', '!1*', '--cwd', t.context.tmp]));
+
+  exists(t, ['1.tmp', '.dot.tmp']);
+  notExists(t, ['2.tmp', '3.tmp', '4.tmp']);
+});
+
+test('skrub - removes files 7 iterations', async t => {
+  t.truthy(await execa(cliLocation, ['*.tmp', '!1*', '--cwd', t.context.tmp, '--iterations', 7]));
 
   exists(t, ['1.tmp', '.dot.tmp']);
   notExists(t, ['2.tmp', '3.tmp', '4.tmp']);
