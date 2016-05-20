@@ -4,6 +4,8 @@
   <br>
 
   <b>Irreversible file deletion on every operating system</b>
+  <br>
+  <i>* Will only work securely on file systems that overwrite blocks in place *</i>
 
   <br>
   <br><br><a href="https://travis-ci.org/dawsonbotsford/skrub-cli"><img src="https://api.travis-ci.org/dawsonbotsford/skrub-cli.svg?branch=master"></a>
@@ -21,7 +23,7 @@
 
 Works on OS X, Linux, and Windows
 
-In contrast to `rm`, which [leaves file contents unallocated in memory](http://unix.stackexchange.com/questions/10883/where-do-files-go-when-the-rm-command-is-issued), `skrub` first floods the file with garbage data and then **removes it forever**.
+In contrast to `rm`, which [leaves file contents unallocated in memory](http://unix.stackexchange.com/questions/10883/where-do-files-go-when-the-rm-command-is-issued), `skrub` first floods the file with garbage data and then **removes it forever**. Read the [FAQ](https://github.com/dawsonbotsford/skrub#faq) for information on how secure this method is.
 
 Looking for the [npm module instead](https://github.com/dawsonbotsford/skrub)?
 
