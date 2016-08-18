@@ -1,12 +1,13 @@
 /* eslint xo/no-process-exit: 0 */
+import test from 'ava';
+
 const path = require('path');
+const execa = require('execa');
 const fs = require('fs-extra');
 const pathExists = require('path-exists');
 const tempfile = require('tempfile');
-const cliLocation = './cli.js';
-const execa = require('execa');
 
-import test from 'ava';
+const cliLocation = './cli.js';
 
 function exists(t, files) {
   [].concat(files).forEach(file => t.true(pathExists.sync(path.join(t.context.tmp, file))));
@@ -34,7 +35,6 @@ test('skrub - invalid args', t => {
 });
 
 test('skrub - dry-run does not remove files', async t => {
-  // t.true(shelljs.exec(`${cliLocation} '*.tmp' '!1*' --dry-run --cwd ${t.context.tmp}`, {silent: true}).code === 0);
   t.truthy(await execa(cliLocation, ['*.tpm', '!1*', '--dry-run']));
   exists(t, ['1.tmp', '2.tmp', '3.tmp', '3.tmp', '.dot.tmp']);
 });
