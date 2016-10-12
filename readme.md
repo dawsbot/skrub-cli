@@ -1,5 +1,5 @@
 <p align="center">
-  <a><img src="img/logo.png" title="skrub logo"/></a>
+  <a><img src="https://raw.githubusercontent.com/dawsonbotsford/skrub/master/img/logo.png" title="skrub logo"/></a>
 
   <br>
 
