@@ -1,5 +1,5 @@
 <p align="center">
-  <a><img src="https://raw.githubusercontent.com/dawsonbotsford/skrub/master/img/logo.png" title="skrub logo"/></a>
+  <a><img src="https://raw.githubusercontent.com/dawsbot/skrub/master/img/logo.png" title="skrub logo"/></a>
 
   <br>
 
@@ -8,7 +8,7 @@
   <i>* Will only work securely on file systems that overwrite blocks in place *</i>
 
   <br>
-  <br><br><a href="https://travis-ci.org/dawsonbotsford/skrub-cli"><img src="https://api.travis-ci.org/dawsonbotsford/skrub-cli.svg?branch=master"></a>
+  <br><br><a href="https://travis-ci.org/dawsbot/skrub-cli"><img src="https://api.travis-ci.org/dawsbot/skrub-cli.svg?branch=master"></a>
   <a href="https://ci.appveyor.com/project/dawsonbotsford/skrub-cli"><img src="https://ci.appveyor.com/api/projects/status/two1klt2y7va7qab?svg=true"></a>
 
   <br>
